@@ -42,7 +42,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Max. Battement/minute</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="95" ><span class="percent">175/170</span>
+						<div class="easypiechart"><span class="percent">175/170</span>
 						</div>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Calorie ingérées/jour</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="100" ><span class="percent">2010/1800</span>
+						<div class="easypiechart"><span class="percent">2010/1800</span>
 						</div>
 					</div>
 				</div>
