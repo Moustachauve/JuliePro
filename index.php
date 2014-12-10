@@ -65,7 +65,7 @@
 					<div class="panel-heading">Mes calories</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
-							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+							<canvas class="main-chart" id="graphCalorie" height="200" width="600"></canvas>
 						</div>
 					</div>
 				</div>

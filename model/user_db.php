@@ -34,6 +34,5 @@ function get_stat_calorie_ingere($userID)
                 ) AS caloriesParJour';
     $result = $db->query($query);
     $result = $result->fetch();
-    print_r($result);
     return $result;
 }

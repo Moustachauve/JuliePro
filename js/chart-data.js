@@ -14,7 +14,6 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*2500)};
 					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 				}
 			]
-
 		}
 		
 	var barChartData = {
