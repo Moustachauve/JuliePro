@@ -11,13 +11,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JuliePro - Tableau de bord</title>
-<link href="/JuliePro/css/bootstrap.min.css" rel="stylesheet">
-<link href="/JuliePro/css/datepicker3.css" rel="stylesheet">
-<link href="/JuliePro/css/styles.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
-<script src="/JuliePro/js/html5shiv.js"></script>
-<script src="/JuliePro/js/respond.min.js"></script>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
 <![endif]-->
 </head>
 
@@ -26,7 +26,7 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"> <span class="sr-only">Afficher la navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<a class="navbar-brand" href="/JuliePro/index.php"><span>JuliePro</span>Admin</a>
+			<a class="navbar-brand" href="index.php"><span>JuliePro</span>Admin</a>
 			<?php if(!empty($userInfo))
 			{ ?>
 			<ul class="user-menu">
