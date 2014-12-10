@@ -18,6 +18,7 @@
 
         <?php
             $entrainementsSemaine = get_stat_entrainement_semaine($userInfo['utilisateurID']);
+            $calorieIngere = get_stat_calorie_ingere($userInfo['utilisateurID']);
         ?>
 		<div class="row">
 			<div class="col-xs-6 col-md-3">
@@ -42,7 +43,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Max. Battement/minute</h4>
-						<div class="easypiechart"><span class="percent">175/170</span>
+						<div class="easypiechart"><span class="percent"><?php echo number_format($entrainementsSemaine[2],1)?></span>
 						</div>
 					</div>
 				</div>
@@ -51,7 +52,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Calorie ingérées/jour</h4>
-						<div class="easypiechart"><span class="percent">2010/1800</span>
+						<div class="easypiechart"><span class="percent"><?php echo round($calorieIngere[0],2)?></span>
 						</div>
 					</div>
 				</div>
