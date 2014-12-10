@@ -2,7 +2,7 @@
 
 window.onload = function(){
 
-    $.getJSON( "getcaloriessemaine.php?userID=2")
+    $.getJSON( "json/getcaloriessemaine.php?userID=2")
         .done(function(data) {
             var lineChartData = {
                 labels : ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"],
