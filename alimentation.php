@@ -30,15 +30,12 @@ include('view/sidemenu.php');
 
                     foreach($alimentation as $alimentCourant)
                     {
-                        $alimentationCourante = Array();
-
-
                         echo '<tr>';
-                        echo'<td>'.$alimentCourant['nomRepas'].'</td>';
-                        echo'<td>'.$alimentCourant['calorieIngere'].'</td>';
-                        echo'<td>'.$alimentCourant['nom'].'</td>';
-                        echo'<td>'.$alimentCourant['date'].'</td>';
-                        echo '<td><a href="#">Supp.</a> <a href="#">Modif.</a></td>';
+                            echo'<td>'.$alimentCourant['nomRepas'].'</td>';
+                            echo'<td>'.$alimentCourant['calorieIngere'].'</td>';
+                            echo'<td>'.$alimentCourant['nom'].'</td>';
+                            echo'<td>'.$alimentCourant['date'].'</td>';
+                            echo '<td><a href="#" class="glyphicon glyphicon-pencil "> </a> <a href="#" class="glyphicon glyphicon-remove color-red"> </a></td>';
                         echo '</tr>';
                     }
                 ?>
