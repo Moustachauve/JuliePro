@@ -2,7 +2,9 @@
 include('model/user_db.php');
 include('model/database.php');
 
-$userID = $_GET['userID'];
+session_start();
+
+$userID = $_SESSION['userID'];
 
 $caloriesParJour = Array();
 

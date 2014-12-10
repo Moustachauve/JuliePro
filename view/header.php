@@ -1,8 +1,13 @@
 <?php
+    session_start();
+
+    $_SESSION['userID'] = 2;
+
+
 	include ("model/database.php");
 	include ("model/user_db.php");
 
-	$userInfo = get_user(2);
+	$userInfo = get_user($_SESSION['userID']);
 ?>
 
 <!DOCTYPE html>
