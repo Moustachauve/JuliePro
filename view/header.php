@@ -6,6 +6,7 @@
 
 	include ("model/database.php");
 	include ("model/user_db.php");
+    include ("model/alimentation_db.php");
 
 	$userInfo = get_user($_SESSION['userID']);
 ?>

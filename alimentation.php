@@ -9,20 +9,39 @@ include('view/sidemenu.php');
     </div>
 </div><!--/.row-->
 
-
+    <?php $alimentation = get_all_alimentation($userInfo['utilisateurID']); ?>
 
     <div class="col-md-6">
         <div class="panel panel-default">
             <div class="panel-heading">Tableau des aliments</div>
             <div class="panel-body">
-                <table data-toggle="table" data-url="tables/data2.json" >
+                <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th data-field="name" data-align="right">Nom du repas</th>
-                        <th data-field="name">Calories ingérées</th>
-                        <th data-field="name">Date de la consommation</th>
+                        <th>bouffe</th>
+                        <th>calories</th>
+                        <th>catégorie</th>
+                        <th>date</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
+
+                    <?php
+
+                    foreach($alimentation as $alimentCourant)
+                    {
+                        $alimentationCourante = Array();
+
+
+                        echo '<tr>';
+                        echo'<td>'.$alimentCourant['nomRepas'].'</td>';
+                        echo'<td>'.$alimentCourant['calorieIngere'].'</td>';
+                        echo'<td>'.$alimentCourant['nom'].'</td>';
+                        echo'<td>'.$alimentCourant['date'].'</td>';
+                        echo '<td><a href="#">Supp.</a> <a href="#">Modif.</a></td>';
+                        echo '</tr>';
+                    }
+                ?>
                 </table>
             </div>
         </div>
