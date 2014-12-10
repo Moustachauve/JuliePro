@@ -164,4 +164,6 @@
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 
+
 <?php include('view/footer.php'); ?>
+    <script src="js/graphCalorie.js"></script>

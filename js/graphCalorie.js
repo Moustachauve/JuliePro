@@ -4,9 +4,6 @@ window.onload = function(){
 
     $.getJSON( "getcaloriessemaine.php?userID=2")
         .done(function(data) {
-
-            alert(data);
-
             var lineChartData = {
                 labels : ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"],
                 datasets : [
