@@ -19,8 +19,12 @@ window.onload = function(){
                     }
                 ]
             }
-            var graphCalorie = document.getElementById("graphCalorie").getContext("2d");
-            window.myLine = new Chart(graphCalorie).Line(lineChartData, {
+            var graphCaloriePerd = document.getElementById("graphCaloriePerd").getContext("2d");
+            var graphCalorieIng = document.getElementById("graphCalorieIng").getContext("2d");
+            window.myLine = new Chart(graphCaloriePerd).Line(lineChartData, {
+                responsive: true
+            });
+            window.myLine = new Chart(graphCalorieIng).Line(lineChartData, {
                 responsive: true
             });
         })
