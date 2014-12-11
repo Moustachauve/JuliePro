@@ -36,3 +36,12 @@ function get_stat_calorie_ingere($userID)
     $result = $result->fetch();
     return $result;
 }
+
+function save_user($userID, $adresse, $ville, $adressecourriel, $notel, $nocell, $codepostal)
+{
+    global $db;
+    $query = "UPDATE `utilisateur` SET `noTel` = '$notel', `noCell` = '$nocell', `adresse` = '$adresse', `ville` = '$ville', `codePostal` = '$codepostal', `courriel` = '$adressecourriel' WHERE `utilisateurID` = '$userID';";
+    $result = $db->exec($query);
+
+
+}

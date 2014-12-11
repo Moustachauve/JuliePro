@@ -12,10 +12,10 @@ include ("model/resultat_db.php");
 
 $userInfo = get_user($_SESSION['userID']);
 
-if(isset($_GET['action']))
-    $action = $_GET['action'];
-elseif(isset($_POST['action']))
+if(isset($_POST['action']))
     $action = $_POST['action'];
+elseif(isset($_GET['action']))
+    $action = $_GET['action'];
 else
     $action = 'accueil';
 
@@ -34,6 +34,9 @@ switch($action)
         break;
     case 'view_profile':
         include('view/profile.php');
+        break;
+    case 'update_profile':
+        include('controler/update_profile.php');
         break;
     default:
         $action = 'accueil';
