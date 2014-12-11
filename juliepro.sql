@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 10 Décembre 2014 à 18:53
+-- Généré le :  Jeu 11 Décembre 2014 à 17:40
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `alimentation` (
   PRIMARY KEY (`alimentationID`),
   KEY `fk_Alimentation_catégorieNourriture1_idx` (`categorieID`),
   KEY `fk_Alimentation_Utilisateur1_idx` (`clientID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `alimentation`
@@ -45,7 +45,9 @@ CREATE TABLE IF NOT EXISTS `alimentation` (
 INSERT INTO `alimentation` (`alimentationID`, `nomRepas`, `calorieIngere`, `date`, `categorieID`, `clientID`) VALUES
 (1, 'Big Mac', 500, '2014-12-08', 1, 2),
 (3, 'Cachou', 150, '2014-12-08', 6, 2),
-(4, 'Steak', 350, '2014-12-09', 2, 2);
+(4, 'Steak', 350, '2014-12-09', 2, 2),
+(5, 'Côtelette de porc', 789, '2014-12-11', 2, 3),
+(6, 'Truite', 450, '2014-12-10', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,17 @@ CREATE TABLE IF NOT EXISTS `conseil` (
   PRIMARY KEY (`conseilID`),
   KEY `fk_Conseil_Utilisateur1_idx` (`entraineurID`),
   KEY `fk_Conseil_Utilisateur2_idx` (`clientID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `conseil`
+--
+
+INSERT INTO `conseil` (`conseilID`, `texte`, `dateAffichage`, `nbJour`, `clientID`, `entraineurID`) VALUES
+(1, 'Mange plus de fruits et légumes.', '2014-12-11', 2, 2, 1),
+(2, 'Fait plus d''exercices de cardio.', '2014-12-10', 4, 2, 1),
+(3, 'Mange moins de malbouffe.', '2014-12-11', 3, 3, 1),
+(4, 'Fait plus d''exercice. Il est important de brûler des calories.', '2014-12-11', 3, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `entrainement` (
   `nom` varchar(45) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`entrainementID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `entrainement`
@@ -109,7 +121,9 @@ CREATE TABLE IF NOT EXISTS `entrainement` (
 
 INSERT INTO `entrainement` (`entrainementID`, `nom`, `type`) VALUES
 (1, 'Zumba', 'Cardio'),
-(2, 'Boots step', 'Cardio');
+(2, 'Boots step', 'Cardio'),
+(3, 'Pompes', 'Altérophilie'),
+(4, 'Levée de poids', 'Altérophilie');
 
 -- --------------------------------------------------------
 
