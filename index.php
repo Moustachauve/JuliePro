@@ -26,15 +26,26 @@ include('view/sidemenu.php');
 
 switch($action)
 {
+    /* ALIMENTATION */
     case 'view_alimentation':
         include('view/alimentation.php');
         break;
+
+    case 'form_alimentation':
+        include('view/form_alimentation.php');
+        break;
+
+    /* RESULTATS */
     case 'view_resultat':
         include('view/resultat.php');
         break;
+
+    /* PROFIL */
     case 'view_profile':
         include('view/profile.php');
         break;
+
+    /* ACCUEUIL */
     default:
         $action = 'accueil';
         include('view/dashboard.php');
