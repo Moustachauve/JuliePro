@@ -21,27 +21,27 @@
 
                 <div class="form-group">
                 <label>Âge:</label>
-                <input class="form-control" value="<?php echo $userInfo['age']; ?>" readonly >
+                <input class="form-control" value="<?php echo $userInfo['age']; ?>" readonly>
                     </div>
                 <div class="form-group">
                 <label>Adresse:</label>
-                <input class="form-control" value="<?php echo $userInfo['adresse']; ?>" placeholder="numéro de rue et rue" >
+                <input class="form-control" value="<?php echo $userInfo['adresse']; ?>" placeholder="numéro de rue et rue" required>
                     </div>
                 <div class="form-group">
                 <label>Ville:</label>
-                <input class="form-control" value="<?php echo $userInfo['ville']; ?>" placeholder="Ville" >
+                <input class="form-control" value="<?php echo $userInfo['ville']; ?>" placeholder="Ville" required>
                     </div>
 
         </div>
                 <div class="col-md-6">
                 <div class="form-group">
                 <label>Adresse Courriel:</label>
-                <input class="form-control" type="email" value="<?php echo $userInfo['courriel']; ?>" placeholder="exemple@exemple.ca" >
+                <input class="form-control" type="email" value="<?php echo $userInfo['courriel']; ?>" placeholder="exemple@exemple.ca" required>
                 </div>
 
                 <div class="form-group">
                 <label>Numéro de téléphone:</label>
-                <input class="form-control" value="<?php echo $userInfo['noTel']; ?>" placeholder="(000)000-0000" type="tel" >
+                <input class="form-control" value="<?php echo $userInfo['noTel']; ?>" placeholder="(000)000-0000" type="tel" required>
                 </div>
                 <div class="form-group">
                 <label>Date d'inscription:</label>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label>Code Postal:</label>
-                        <input class="form-control" value="<?php echo $userInfo['codePostal']; ?>" placeholder="X0X 0X0" >
+                        <input class="form-control" value="<?php echo $userInfo['codePostal']; ?>" placeholder="X0X 0X0" required>
                     </div>
 
                 </div>
