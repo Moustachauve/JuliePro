@@ -32,6 +32,9 @@ switch($action)
     case 'view_resultat':
         include('view/resultat.php');
         break;
+    case 'view_profile':
+        include('view/profile.php');
+        break;
     default:
         $action = 'accueil';
         include('view/dashboard.php');
