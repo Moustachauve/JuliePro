@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 11 Décembre 2014 à 17:40
+-- Généré le :  Jeu 11 Décembre 2014 à 20:26
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -165,7 +165,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(45) NOT NULL,
   `noTel` varchar(45) NOT NULL,
   `noCell` varchar(45) DEFAULT NULL,
-  `adresse` varchar(45) NOT NULL,
+  `noRue` int(11) NOT NULL,
+  `rue` varchar(45) NOT NULL,
   `ville` varchar(45) NOT NULL,
   `codePostal` varchar(45) NOT NULL,
   `age` int(11) NOT NULL,
@@ -181,10 +182,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`utilisateurID`, `nom`, `prenom`, `noTel`, `noCell`, `adresse`, `ville`, `codePostal`, `age`, `dateInscription`, `courriel`, `statut`, `entraineurID`) VALUES
-(1, 'Bernier', 'Samuel', '(450)444-5555', '(514)438-5555', '1850 Boucher', 'Longueuil', 'J4M 1P9', 18, '2014-12-03 00:00:00', 'samuelb@hotmail.ca', 2, NULL),
-(2, 'Gagnier', 'Christophe', '(450)448-5555', '(514)435-5546', '2140 Buies', 'Longueuil', 'J4P 1T6', 18, '2014-12-03 00:00:00', 'gagnierC@hotmail.ca', 1, 1),
-(3, 'Desmecht', 'Samuel', '(450)446-7894', '(514)438-4876', '1645 Beauharnois', 'Longueuil', 'J4M 1X6', 23, '2014-12-03 00:00:00', 'samuelD@hotmail.ca', 1, 1);
+INSERT INTO `utilisateur` (`utilisateurID`, `nom`, `prenom`, `noTel`, `noCell`, `noRue`, `rue`, `ville`, `codePostal`, `age`, `dateInscription`, `courriel`, `statut`, `entraineurID`) VALUES
+(1, 'Bernier ', 'Samuel ', '(450)444-5555 ', '(514)438-5555 ', 1850, 'Boucher ', 'Longueuil ', 'J4M 1P9 ', 18, '2014-12-03 00:00:00', 'samuelb@hotmail.ca ', 2, NULL),
+(2, 'Gagnier', 'Christophe', '(123) 456-7890', '(233) 242-4512', 2150, 'Boucher', 'Longueuil', 'J4P 1T6', 18, '2014-12-03 00:00:00', 'christophe@hotmail.ca', 1, 1),
+(3, 'Desmecht', 'Samuel', '(450)446-7894', '(514)438-4876', 1645, 'Beauharnois', 'Longueuil', 'J4M 1X6', 23, '2014-12-03 00:00:00', 'samuelD@hotmail.ca', 1, 1);
 
 --
 -- Contraintes pour les tables exportées
