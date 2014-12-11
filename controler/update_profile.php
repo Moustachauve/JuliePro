@@ -8,7 +8,7 @@ if(!isset($_POST['nocell']) || !preg_match('/(\(\d{3}+\)+ \d{3}+\-\d{4}+)/', $_P
     $success = 'cell';
 
 if($success === true)
-    save_user($_SESSION['userID'],$_POST['adresse'],$_POST['ville'],$_POST['adressecourriel'],$_POST['notel'],$_POST['nocell'],$_POST['codepostal']);
+    save_user($_SESSION['userID'],$_POST['noRue'],$_POST['rue'],$_POST['ville'],$_POST['adressecourriel'],$_POST['notel'],$_POST['nocell'],$_POST['codepostal']);
 
 $userInfo = get_user($_SESSION['userID']);
 

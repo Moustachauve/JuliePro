@@ -50,9 +50,13 @@ if(isset($success))
                 <input class="form-control" value="<?php echo $userInfo['age']; ?>" readonly name="age">
                     </div>
                 <div class="form-group">
-                <label>Adresse:</label>
-                <input class="form-control" value="<?php echo $userInfo['adresse']; ?>" placeholder="numéro de rue et rue" required name="adresse">
+                <label>No Rue:</label>
+                <input class="form-control" value="<?php echo $userInfo['noRue']; ?>" placeholder="numéro de rue" required name="noRue">
                     </div>
+            <div class="form-group">
+                <label>Rue:</label>
+                <input class="form-control" value="<?php echo $userInfo['rue']; ?>" placeholder="nom de la rue" required name="rue">
+            </div>
                 <div class="form-group">
                 <label>Ville:</label>
                 <input class="form-control" value="<?php echo $userInfo['ville']; ?>" placeholder="Ville" required name="ville">
