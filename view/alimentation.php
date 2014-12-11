@@ -6,7 +6,7 @@
 
     <?php $alimentation = get_all_alimentation($userInfo['utilisateurID']); ?>
 
-    <div class="col-md-6">
+    <div class="col-md-7">
         <div class="panel panel-default">
             <div class="panel-heading">Tableau des aliments</div>
             <div class="panel-body">
