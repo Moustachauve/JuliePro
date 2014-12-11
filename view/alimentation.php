@@ -38,6 +38,7 @@
                     }
                 ?>
                 </table>
+                <a href="#" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Ajouter</a>
             </div>
         </div>
     </div>
