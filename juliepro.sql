@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 16 Décembre 2014 à 19:55
+-- Généré le :  Mar 16 Décembre 2014 à 23:28
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `juliepro`
 --
+CREATE DATABASE IF NOT EXISTS `juliepro` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `juliepro`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `alimentation`
 --
 
+DROP TABLE IF EXISTS `alimentation`;
 CREATE TABLE IF NOT EXISTS `alimentation` (
 `alimentationID` int(11) NOT NULL,
   `nomRepas` varchar(45) NOT NULL,
@@ -50,6 +53,7 @@ INSERT INTO `alimentation` (`alimentationID`, `nomRepas`, `calorieIngere`, `date
 -- Structure de la table `categorienourriture`
 --
 
+DROP TABLE IF EXISTS `categorienourriture`;
 CREATE TABLE IF NOT EXISTS `categorienourriture` (
 `categorieID` int(11) NOT NULL,
   `nom` varchar(45) NOT NULL
@@ -74,6 +78,7 @@ INSERT INTO `categorienourriture` (`categorieID`, `nom`) VALUES
 -- Structure de la table `conseil`
 --
 
+DROP TABLE IF EXISTS `conseil`;
 CREATE TABLE IF NOT EXISTS `conseil` (
 `conseilID` int(11) NOT NULL,
   `texte` text NOT NULL,
@@ -89,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `conseil` (
 -- Structure de la table `entrainement`
 --
 
+DROP TABLE IF EXISTS `entrainement`;
 CREATE TABLE IF NOT EXISTS `entrainement` (
 `entrainementID` int(11) NOT NULL,
   `nom` varchar(45) DEFAULT NULL,
@@ -109,13 +115,22 @@ INSERT INTO `entrainement` (`entrainementID`, `nom`, `type`) VALUES
 -- Structure de la table `message`
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
 `messageID` int(11) NOT NULL,
   `message` text NOT NULL,
   `date` datetime NOT NULL,
+  `estLu` tinyint(1) DEFAULT NULL,
   `expeditaireID` int(11) NOT NULL,
-  `destinateurID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `destinataireID` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `message`
+--
+
+INSERT INTO `message` (`messageID`, `message`, `date`, `estLu`, `expeditaireID`, `destinataireID`) VALUES
+(1, 'Bonjour', '2014-12-16 17:09:53', 0, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -123,6 +138,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- Structure de la table `resultat`
 --
 
+DROP TABLE IF EXISTS `resultat`;
 CREATE TABLE IF NOT EXISTS `resultat` (
 `resultatID` int(11) NOT NULL,
   `FQMax` int(11) NOT NULL,
@@ -148,6 +164,7 @@ INSERT INTO `resultat` (`resultatID`, `FQMax`, `VO2Max`, `calorieBrulee`, `date`
 -- Structure de la table `utilisateur`
 --
 
+DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
 `utilisateurID` int(11) NOT NULL,
   `nom` varchar(45) NOT NULL,
@@ -205,7 +222,7 @@ ALTER TABLE `entrainement`
 -- Index pour la table `message`
 --
 ALTER TABLE `message`
- ADD PRIMARY KEY (`messageID`), ADD KEY `fk_Message_utilisateur1_idx` (`expeditaireID`), ADD KEY `fk_Message_utilisateur2_idx` (`destinateurID`);
+ ADD PRIMARY KEY (`messageID`), ADD KEY `fk_Message_utilisateur1_idx` (`expeditaireID`), ADD KEY `fk_Message_utilisateur2_idx` (`destinataireID`);
 
 --
 -- Index pour la table `resultat`
@@ -247,7 +264,7 @@ MODIFY `entrainementID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `resultat`
 --
@@ -281,7 +298,7 @@ ADD CONSTRAINT `fk_Conseil_Utilisateur2` FOREIGN KEY (`clientID`) REFERENCES `ut
 --
 ALTER TABLE `message`
 ADD CONSTRAINT `fk_Message_utilisateur1` FOREIGN KEY (`expeditaireID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_Message_utilisateur2` FOREIGN KEY (`destinateurID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_Message_utilisateur2` FOREIGN KEY (`destinataireID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `resultat`
