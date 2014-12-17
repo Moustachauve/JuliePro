@@ -9,6 +9,7 @@ include ("model/database.php");
 include ("model/user_db.php");
 include ("model/alimentation_db.php");
 include ("model/resultat_db.php");
+include ("model/message_db.php");
 
 $userInfo = get_user($_SESSION['userID']);
 
@@ -47,6 +48,12 @@ switch($action)
 
     case 'update_profile':
         include('controler/update_profile.php');
+        break;
+
+    /* MESSASGES PRIVÉS */
+
+    case 'view_messageprive':
+        include('view/messageprive.php');
         break;
 
 		/* ACCUEUIL */

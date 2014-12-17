@@ -31,6 +31,9 @@
                         </ul>
                     </li>
                 </ul>
+				<ul class="user-menu">
+					<li><a href="?action=view_messageprive"><span class="glyphicon glyphicon-envelope"></span> 1 </a></li>
+				</ul>
             <?php } ?>
         </div>
     </div>
