@@ -6,8 +6,9 @@
 
 <script>
     $(function() {
-        $( "#datepicker" ).datepicker();
-        $( "#datepicker" ).datepicker( "option", "dateFormat", 'YYYY-mm-dd');
+        $.datepicker.ISO_8601;
+        $("#datepicker").datepicker({ changeMonth: true,changeYear: true,maxDate: "+0D",dateFormat: "dd.mm.yy" });
+
     });
 </script>
 
@@ -18,8 +19,6 @@
         <div class="col-md-6">
 
             <form action="#">
-
-
 
                 <div class="form-group">
                     <label>Nom Repas:</label>
@@ -32,7 +31,8 @@
                 </div>
                 <div class="form-group">
                     <label>date:</label>
-                    <input class="form-control" value="<?php echo ''; ?>" id="datepicker">
+                    <input class="form-control"  id="datepicker">
+                    <!--value="<?php //echo date('Y-m-d'); ?>" -->
                 </div>
 
             </form>

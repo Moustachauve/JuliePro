@@ -3,7 +3,7 @@
 function get_all_alimentation($userID){
 
     global $db;
-    $query = '          select a.`alimentationID`, a.`nomRepas`, a.`calorieIngere`,`date`, c.nom
+    $query = '      select a.`alimentationID`, a.`nomRepas`, a.`calorieIngere`,`date`, c.nom
                     from `alimentation` a
                     inner join categorienourriture c
                     on c.categorieID = a.categorieID
