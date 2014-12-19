@@ -21,3 +21,9 @@ function get_all_alimentation($userID){
 
     return $alimentation;
 }
+function insert_alimentation($userID, $alimentationID, $nomRepas, $calorieIngere){
+    global $db;
+    $query = "insert into `alimentation`(`userID`,`alimentationID`,`nomRepas`,`calorieIngere`)
+    values ('$userID', '$alimentationID','$nomRepas','$calorieIngere');";
+
+}

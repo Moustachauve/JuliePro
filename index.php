@@ -36,6 +36,10 @@ switch($action)
         include('view/form_alimentation.php');
         break;
 
+    case 'insert_alimentation':
+        include('controler/insert_alimentation.php');
+        break;
+
     /* RESULTATS */
     case 'view_resultat':
         include('view/resultat.php');

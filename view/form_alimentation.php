@@ -22,24 +22,23 @@
 
                 <div class="form-group">
                     <label>Nom Repas:</label>
-                    <input class="form-control" value="" required>
+                    <input class="form-control" value="" required name="nomRepas">
                 </div>
 
                 <div class="form-group">
                     <label>calorie:</label>
-                    <input class="form-control" value=""  required>
+                    <input class="form-control" value=""  required name="calorieIngere">
                 </div>
                 <div class="form-group">
                     <label>date:</label>
-                    <input class="form-control"  id="datepicker">
+                    <input class="form-control"  id="datepicker" name="date">
                     <!--value="<?php //echo date('Y-m-d'); ?>" -->
                 </div>
-
+                <button type="submit" class="btn btn-primary" name="action" value="insert_alimentation">Ajouter</button>
             </form>
         </div>
         <div class="col-md-6">
 
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
         </div>
 
 
