@@ -44,7 +44,12 @@ switch($action)
     case 'view_resultat':
         include('view/resultat.php');
         break;
-
+    case 'form_resultat':
+        include('view/form_resultat.php');
+        break;
+    case 'insert_resultat':
+        include('controler/insert_resultat.php');
+        break;
     /* PROFIL */
     case 'view_profile':
         include('view/profile.php');
