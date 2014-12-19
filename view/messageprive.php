@@ -21,7 +21,10 @@
 
                 foreach($messages as $messageCourant)
                 {
-                    echo '<tr>';
+                    echo '<tr';
+                    if(!$messageCourant['estLu'])
+                        echo ' class="info" ';
+                    echo '>';
                     echo'<td><span class="glyphicon glyphicon-envelope"></span>';
                     echo'<td>'.$messageCourant['auteur'].'</td>';
                     echo'<td>'.$messageCourant['titre'].'</td>';
