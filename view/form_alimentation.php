@@ -4,6 +4,14 @@
     </div>
 </div><!--/.row-->
 
+<script>
+    $(function() {
+        $.datepicker.ISO_8601;
+        $("#datepicker").datepicker({ changeMonth: true,changeYear: true,maxDate: "+0D",dateFormat: "dd.mm.yy" });
+
+    });
+</script>
+
 <div class="panel panel-default">
     <div class="panel-heading">Alimentation de la journee</div>
     <div class="panel-body">
