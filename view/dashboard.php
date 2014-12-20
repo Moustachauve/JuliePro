@@ -31,7 +31,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
 						<h4>Calories perdues</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $entrainementsSemaine[1] / 2500 * 100; ?>" ><span class="percent"><?php echo $entrainementsSemaine[1]; ?>/2500</span>
+						<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $entrainementsSemaine[1] / 2500 * 100; ?>" ><span class="percent"><?php echo number_format($entrainementsSemaine[1], 0); ?>/2500</span>
 						</div>
 					</div>
 				</div>
