@@ -15,14 +15,18 @@ $query = '
                     WHERE `date` >= adddate(curdate(), INTERVAL 1-DAYOFWEEK(curdate()) DAY)
                     AND `date` <= adddate(curdate(), INTERVAL 7-DAYOFWEEK(curdate()) DAY)
                     AND `clientID` = '.$userID.'
-                    GROUP BY date';
+                    GROUP BY `date`';
 
 $result = $db->query($query);
+
+for($i = 0; $i < 7; $i++)
+{
+    $caloriesParJour[$i] = 0;
+}
 
 while($data = $result->fetch())
 {
     $caloriesParJour[$data['dayOfWeek']] = $data['caloriesPerdu'];
 }
-
 
 echo json_encode($caloriesParJour);
