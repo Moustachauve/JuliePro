@@ -6,9 +6,7 @@
 
 <script>
     $(function() {
-        $.datepicker.ISO_8601;
-        $("#datepicker").datepicker({ format: "yyyy/mm/dd" });
-
+        $("#datepicker").datepicker({ format: "yyyy-mm-dd" });
     });
 </script>
 
@@ -18,7 +16,14 @@
         <strong style="margin-bottom: 15px; display: block;">Veillez entre les calories ingerees pendant la journee </strong>
         <div class="col-md-6">
 
-            <form action="#">
+            <form action="?action=view_alimentation" method="post">
+
+                <div class="form-group">
+                    <label>Catégorie:</label>
+                    <select name="categorie" class="form-control">
+                        <option value="1">Malbouffe</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label>Nom Repas:</label>
@@ -31,8 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label>date:</label>
-                    <input class="form-control"  id="datepicker" name="date">
-                    <!--value="<?php //echo date('Y-m-d'); ?>" -->
+                    <input class="form-control"  id="datepicker" name="date" value="<?php echo date('Y-m-d'); ?>" >
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="insert_alimentation">Ajouter</button>
             </form>

@@ -1,8 +1,6 @@
 <?php
 
-insert_alimentation($_SESSION['userID'],$_POST['alimentationID'],$_POST['nomRepas'],$_POST['calorieIngere']);
-
-$userInfo = get_user($_SESSION['userID']);
+insert_alimentation($_POST['nomRepas'], $_POST['calorieIngere'], $_POST['date'], $_POST['categorie'], $_SESSION['userID']);
 
 include('view/alimentation.php');
 ?>

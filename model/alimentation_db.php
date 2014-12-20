@@ -23,9 +23,13 @@ function get_all_alimentation($userID){
 }
 
 
-function insert_alimentation($userID, $alimentationID, $nomRepas, $calorieIngere){
+function insert_alimentation($nomRepas,  $calorieIngere, $date, $categorieID, $clientID){
     global $db;
-    $query = "insert into `alimentation`(`userID`,`alimentationID`,`nomRepas`,`calorieIngere`)
-    values ('$userID', '$alimentationID','$nomRepas','$calorieIngere');";
 
+    $query = "
+              INSERT INTO `alimentation` (`nomRepas`,`calorieIngere`, `date`, `categorieID`, `clientID`)
+              VALUES ('$nomRepas', '$calorieIngere', '$date', '$categorieID', '$clientID');
+          ";
+
+    $db->exec($query);
 }
