@@ -9,14 +9,14 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="js/template_js/html5shiv.js"></script>
+    <script src="js/template_js/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
+<script src="js/template_js/jquery-1.11.1.min.js"></script>
+<script src="js/template_js/jquery-ui.min.js"></script>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
