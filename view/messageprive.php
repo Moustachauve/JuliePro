@@ -2,7 +2,7 @@
 
 <div class="col-md-12">
     <div class="panel panel-default">
-        <div class="panel-heading">Messages privés <a href="#" class="btn btn-primary pull-right">Envoyer un message</a></div>
+        <div class="panel-heading">Messages privés <a href="?action=form_messageprive" class="btn btn-primary pull-right">Envoyer un message</a></div>
         <div class="panel-body">
 
             <table class="table table-striped table-hover">
@@ -23,7 +23,7 @@
                 {
                     echo '<tr';
                     if(!$messageCourant['estLu'])
-                        echo ' class="info" ';
+                        echo ' class="info nonLu" ';
                     echo '>';
                     echo'<td><span class="glyphicon glyphicon-envelope"></span>';
                     echo'<td>'.$messageCourant['auteur'].'</td>';

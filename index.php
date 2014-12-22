@@ -69,6 +69,10 @@ switch($action)
         include('view/messageprive.php');
         break;
 
+    case 'form_messageprive':
+        include('view/form_messageprive.php');
+        break;
+
 		/* ACCUEUIL */
     default:
         $action = 'accueil';
