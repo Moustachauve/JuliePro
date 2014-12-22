@@ -19,6 +19,7 @@
                         <th>Calories brûlées</th>
                         <th>Type</th>
                         <th>Date</th>
+                        <th>Action</th>
 
                     </tr>
                     </thead>
@@ -35,7 +36,7 @@
                             echo'<td>'.$resultatCourant['type'].'</td>';
                             echo'<td>'.$resultatCourant['date'].'</td>';
                         echo '<td>';
-                            echo '<td><a href="#" class="glyphicon glyphicon-pencil "> </a>' ;
+                            echo '<a href="#" class="glyphicon glyphicon-pencil "> </a> ';
                             echo '<a href="?action=remove_resultat&resultatID='.$resultatCourant['resultatID'].'" class="glyphicon glyphicon-remove color-red"> </a>';
                         echo '</td>';
                         echo '</tr>';
