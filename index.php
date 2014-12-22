@@ -36,6 +36,10 @@ switch($action)
         include('view/form_alimentation.php');
         break;
 
+    case 'remove_alimentation':
+        include('controler/remove_alimentation.php');
+        break;
+
     case 'insert_alimentation':
         include('controler/insert_alimentation.php');
         break;

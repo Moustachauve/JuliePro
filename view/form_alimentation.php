@@ -22,6 +22,12 @@
                     <label>Catégorie:</label>
                     <select name="categorie" class="form-control">
                         <option value="1">Malbouffe</option>
+                        <option value="2">Viande</option>
+                        <option value="3">Poisson</option>
+                        <option value="4">Fruit</option>
+                        <option value="5">Légume</option>
+                        <option value="6">Noix & Graines</option>
+                        <option value="7">Légumineuse</option>
                     </select>
                 </div>
 

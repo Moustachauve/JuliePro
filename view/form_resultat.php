@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label>ID de l'exercice:</label>
-                    <input class="form-control" value="" required name="resultatID">
+                    <input class="form-control" value="" required name="entrainementID">
                 </div>
 
                 <div class="form-group">
@@ -43,17 +43,13 @@
                 </div>
                 <div class="form-group">
                     <label>Date:</label>
-                    <input class="form-control"  id="datepicker">
-                    <!--value="<?php //echo date('Y-m-d'); ?>" -->
+                    <input class="form-control"  id="datepicker" name="date" value="<?php echo date('Y-m-d');?>">
+
                 </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="insert_resultat">Enregistrer</button>
             </form>
 
-        <div class="col-md-6">
-
-
-        </div>
 
 
     </div>

@@ -33,3 +33,15 @@ function insert_alimentation($nomRepas,  $calorieIngere, $date, $categorieID, $c
 
     $db->exec($query);
 }
+
+
+function remove_alimentation($nomRepas, $date){
+    global $db;
+
+    $query = "
+              DELETE FROM `alimentation`
+              WHERE `nomRepas` = '$nomRepas' and `date` = '$date'
+          ";
+
+    $db->exec($query);
+}

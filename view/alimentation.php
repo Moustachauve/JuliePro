@@ -32,7 +32,7 @@
                             echo'<td>'.$alimentCourant['date'].'</td>';
                             echo '<td>';
                                 echo '<a href="#" class="glyphicon glyphicon-pencil "> </a> ';
-                                echo '<a href="#" class="glyphicon glyphicon-remove color-red"> </a>';
+                                echo '<a href="?action=remove_alimentation" class="glyphicon glyphicon-remove color-red"> </a>';
                             echo '</td>';
                         echo '</tr>';
                     }

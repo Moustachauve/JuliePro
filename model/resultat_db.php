@@ -19,3 +19,15 @@ function get_all_resultat($userID)
 
     return $resultat;
 }
+
+
+    function insert_resultat($FQMax,$VO2Max, $calorieBrulee, $date, $entrainementID, $clientID){
+        global $db;
+
+        $query = "
+              INSERT INTO `resultat` (`FQMax`,`VO2Max`, `calorieBrulee`, `date`, `entrainementID`, `clientID` )
+              VALUES ('$FQMax', '$VO2Max', '$calorieBrulee', '$date', '$entrainementID', '$clientID' );
+          ";
+
+        $db->exec($query);
+}
