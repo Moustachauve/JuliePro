@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 16 Décembre 2014 à 23:28
+-- Généré le :  Lun 22 Décembre 2014 à 21:32
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `juliepro`
 --
-CREATE DATABASE IF NOT EXISTS `juliepro` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `juliepro`;
 
 -- --------------------------------------------------------
 
@@ -36,8 +34,13 @@ CREATE TABLE IF NOT EXISTS `alimentation` (
   `date` date NOT NULL,
   `categorieID` int(11) NOT NULL,
   `clientID` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
+--
+-- Vider la table avant d'insérer `alimentation`
+--
+
+TRUNCATE TABLE `alimentation`;
 --
 -- Contenu de la table `alimentation`
 --
@@ -45,7 +48,8 @@ CREATE TABLE IF NOT EXISTS `alimentation` (
 INSERT INTO `alimentation` (`alimentationID`, `nomRepas`, `calorieIngere`, `date`, `categorieID`, `clientID`) VALUES
 (1, 'Big Mac', 500, '2014-12-08', 1, 2),
 (3, 'Cachou', 150, '2014-12-08', 6, 2),
-(4, 'Steak', 350, '2014-12-09', 2, 2);
+(4, 'Steak', 350, '2014-12-09', 2, 2),
+(7, 'abv', 162, '2014-12-18', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -59,6 +63,11 @@ CREATE TABLE IF NOT EXISTS `categorienourriture` (
   `nom` varchar(45) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
+--
+-- Vider la table avant d'insérer `categorienourriture`
+--
+
+TRUNCATE TABLE `categorienourriture`;
 --
 -- Contenu de la table `categorienourriture`
 --
@@ -88,6 +97,11 @@ CREATE TABLE IF NOT EXISTS `conseil` (
   `entraineurID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Vider la table avant d'insérer `conseil`
+--
+
+TRUNCATE TABLE `conseil`;
 -- --------------------------------------------------------
 
 --
@@ -101,6 +115,11 @@ CREATE TABLE IF NOT EXISTS `entrainement` (
   `type` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+--
+-- Vider la table avant d'insérer `entrainement`
+--
+
+TRUNCATE TABLE `entrainement`;
 --
 -- Contenu de la table `entrainement`
 --
@@ -118,6 +137,7 @@ INSERT INTO `entrainement` (`entrainementID`, `nom`, `type`) VALUES
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
 `messageID` int(11) NOT NULL,
+  `titre` varchar(45) NOT NULL,
   `message` text NOT NULL,
   `date` datetime NOT NULL,
   `estLu` tinyint(1) DEFAULT NULL,
@@ -126,11 +146,16 @@ CREATE TABLE IF NOT EXISTS `message` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
+-- Vider la table avant d'insérer `message`
+--
+
+TRUNCATE TABLE `message`;
+--
 -- Contenu de la table `message`
 --
 
-INSERT INTO `message` (`messageID`, `message`, `date`, `estLu`, `expeditaireID`, `destinataireID`) VALUES
-(1, 'Bonjour', '2014-12-16 17:09:53', 0, 1, 2);
+INSERT INTO `message` (`messageID`, `titre`, `message`, `date`, `estLu`, `expeditaireID`, `destinataireID`) VALUES
+(1, 'Ceci est un test.', 'Bonjour', '2014-12-16 17:09:53', 0, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -150,13 +175,18 @@ CREATE TABLE IF NOT EXISTS `resultat` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
+-- Vider la table avant d'insérer `resultat`
+--
+
+TRUNCATE TABLE `resultat`;
+--
 -- Contenu de la table `resultat`
 --
 
 INSERT INTO `resultat` (`resultatID`, `FQMax`, `VO2Max`, `calorieBrulee`, `date`, `entrainementID`, `clientID`) VALUES
 (2, 134, 35, 500, '2014-12-08 00:00:00', 1, 3),
 (3, 134, 34, 503, '2014-12-10 00:00:00', 2, 2),
-(4, 125, 31, 456, '2014-12-08 00:00:00', 1, 2);
+(4, 125, 31, 456, '2014-12-10 00:00:00', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -171,7 +201,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `prenom` varchar(45) NOT NULL,
   `noTel` varchar(45) NOT NULL,
   `noCell` varchar(45) DEFAULT NULL,
-  `adresse` varchar(45) NOT NULL,
+  `noRue` int(11) NOT NULL,
+  `rue` varchar(45) NOT NULL,
   `ville` varchar(45) NOT NULL,
   `codePostal` varchar(45) NOT NULL,
   `age` int(11) NOT NULL,
@@ -182,13 +213,18 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
+-- Vider la table avant d'insérer `utilisateur`
+--
+
+TRUNCATE TABLE `utilisateur`;
+--
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`utilisateurID`, `nom`, `prenom`, `noTel`, `noCell`, `adresse`, `ville`, `codePostal`, `age`, `dateInscription`, `courriel`, `statut`, `entraineurID`) VALUES
-(1, 'Bernier', 'Samuel', '(450)444-5555', '(514)438-5555', '1850 Boucher', 'Longueuil', 'J4M 1P9', 18, '2014-12-03 00:00:00', 'samuelb@hotmail.ca', 2, NULL),
-(2, 'Gagnier', 'Christophe', '(450)448-5555', '(514)435-5546', '2140 Buies', 'Longueuil', 'J4P 1T6', 18, '2014-12-03 00:00:00', 'gagnierC@hotmail.ca', 1, 1),
-(3, 'Desmecht', 'Samuel', '(450)446-7894', '(514)438-4876', '1645 Beauharnois', 'Longueuil', 'J4M 1X6', 23, '2014-12-03 00:00:00', 'samuelD@hotmail.ca', 1, 1);
+INSERT INTO `utilisateur` (`utilisateurID`, `nom`, `prenom`, `noTel`, `noCell`, `noRue`, `rue`, `ville`, `codePostal`, `age`, `dateInscription`, `courriel`, `statut`, `entraineurID`) VALUES
+(1, 'Bernier', 'Samuel', '(450)444-5555', '(514)438-5555', 1, 'Boucher', 'Longueuil', 'J4M 1P9', 18, '2014-12-03 00:00:00', 'samuelb@hotmail.ca', 2, NULL),
+(2, 'Gagnier', 'Christophe', '(450)448-5555', '(514)435-5546', 52, 'Buies', 'Longueuil', 'J4P 1T6', 18, '2014-12-03 00:00:00', 'gagnierC@hotmail.ca', 1, 1),
+(3, 'Desmecht', 'Samuel', '(450)446-7894', '(514)438-4876', 6254, 'Beauharnois', 'Longueuil', 'J4M 1X6', 23, '2014-12-03 00:00:00', 'samuelD@hotmail.ca', 1, 1);
 
 --
 -- Index pour les tables exportées
@@ -244,7 +280,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `alimentation`
 --
 ALTER TABLE `alimentation`
-MODIFY `alimentationID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `alimentationID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `categorienourriture`
 --
