@@ -23,7 +23,15 @@
 
                 <div class="form-group">
                     <label>ID de l'exercice:</label>
-                    <input class="form-control" value="" required name="entrainementID">
+                    <select name="categorie" class="form-control">
+                        <?php
+                        $entrainements = get_all_entrainement();
+                        foreach($entrainements as $entrainementCourant)
+                        {
+                            echo '<option value="'.$entrainementCourant['entrainementID'].'">'.$entrainementCourant['nom'].'</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
 
                 <div class="form-group">

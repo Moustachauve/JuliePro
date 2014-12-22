@@ -20,6 +20,17 @@ function get_all_resultat($userID)
     return $resultat;
 }
 
+function get_all_entrainement(){
+
+    global $db;
+    $query = 'select * from  `entrainement` ; ';
+
+
+    $result = $db->query($query);
+
+    return $result;
+}
+
 
     function insert_resultat($FQMax,$VO2Max, $calorieBrulee, $date, $entrainementID, $clientID){
         global $db;
