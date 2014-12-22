@@ -22,8 +22,8 @@
                 <div class="col-md-6">
 
                 <div class="form-group">
-                    <label>ID de l'exercice:</label>
-                    <select name="categorie" class="form-control">
+                    <label>Choix de l'exercice:</label>
+                    <select name="entrainementID" class="form-control">
                         <?php
                         $entrainements = get_all_entrainement();
                         foreach($entrainements as $entrainementCourant)

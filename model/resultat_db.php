@@ -42,3 +42,15 @@ function get_all_entrainement(){
 
         $db->exec($query);
 }
+
+
+function remove_resultat($resultatID, $userID){
+    global $db;
+
+    $query = "
+              DELETE FROM `resultat`
+              WHERE `resultatID` = '$resultatID' AND `clientID` = '$userID'
+          ";
+
+    $db->exec($query);
+}

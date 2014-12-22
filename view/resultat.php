@@ -34,7 +34,10 @@
                             echo'<td>'.$resultatCourant['calorieBrulee'].'</td>';
                             echo'<td>'.$resultatCourant['type'].'</td>';
                             echo'<td>'.$resultatCourant['date'].'</td>';
-                            echo '<td><a href="#" class="glyphicon glyphicon-pencil "> </a> <a href="#" class="glyphicon glyphicon-remove color-red"> </a></td>';
+                        echo '<td>';
+                            echo '<td><a href="#" class="glyphicon glyphicon-pencil "> </a>' ;
+                            echo '<a href="?action=remove_resultat&resultatID='.$resultatCourant['resultatID'].'" class="glyphicon glyphicon-remove color-red"> </a>';
+                        echo '</td>';
                         echo '</tr>';
                     }
                 ?>

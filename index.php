@@ -54,6 +54,9 @@ switch($action)
     case 'insert_resultat':
         include('controler/insert_resultat.php');
         break;
+    case 'remove_resultat':
+        include('controler/remove_resultat.php');
+        break;
     /* PROFIL */
     case 'view_profile':
         include('view/profile.php');
