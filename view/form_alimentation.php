@@ -11,23 +11,22 @@
 </script>
 
 <div class="panel panel-default">
-    <div class="panel-heading">Alimentation de la journee</div>
+    <div class="panel-heading">Alimentation de la journée</div>
     <div class="panel-body">
-        <strong style="margin-bottom: 15px; display: block;">Veillez entre les calories ingerees pendant la journee </strong>
+        <strong style="margin-bottom: 15px; display: block;">Veuillez entrer les calories ingérées pendant la journée </strong>
         <div class="col-md-6">
-
             <form action="?action=view_alimentation" method="post">
 
                 <div class="form-group">
                     <label>Catégorie:</label>
                     <select name="categorie" class="form-control">
-                        <option value="1">Malbouffe</option>
-                        <option value="2">Viande</option>
-                        <option value="3">Poisson</option>
-                        <option value="4">Fruit</option>
-                        <option value="5">Légume</option>
-                        <option value="6">Noix & Graines</option>
-                        <option value="7">Légumineuse</option>
+                        <?php
+                        $categories = get_all_categorie();
+                        foreach($categories as $categorieCourante)
+                        {
+                            echo '<option value="'.$categorieCourante['categorieID'].'">'.$categorieCourante['nom'].'</option>';
+                        }
+                        ?>
                     </select>
                 </div>
 

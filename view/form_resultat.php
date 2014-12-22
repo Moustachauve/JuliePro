@@ -6,8 +6,7 @@
 
 <script>
     $(function() {
-        $.datepicker.ISO_8601;
-        $("#datepicker").datepicker({ changeMonth: true,changeYear: true,maxDate: "+0D",dateFormat: "dd.mm.yy" });
+        $("#datepicker").datepicker({ format: "yyyy-mm-dd" });
 
     });
 </script>

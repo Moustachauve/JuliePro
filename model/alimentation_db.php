@@ -23,6 +23,16 @@ function get_all_alimentation($userID){
 }
 
 
+function get_all_categorie(){
+
+    global $db;
+    $query = 'select * from  `categorienourriture` ; ';
+
+
+    $result = $db->query($query);
+
+    return $result;
+}
 function insert_alimentation($nomRepas,  $calorieIngere, $date, $categorieID, $clientID){
     global $db;
 
