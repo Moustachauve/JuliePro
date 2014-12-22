@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 22 Décembre 2014 à 21:32
+-- Généré le :  Lun 22 Décembre 2014 à 23:28
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Structure de la table `alimentation`
 --
 
-DROP TABLE IF EXISTS `alimentation`;
 CREATE TABLE IF NOT EXISTS `alimentation` (
 `alimentationID` int(11) NOT NULL,
   `nomRepas` varchar(45) NOT NULL,
@@ -36,11 +35,6 @@ CREATE TABLE IF NOT EXISTS `alimentation` (
   `clientID` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
---
--- Vider la table avant d'insérer `alimentation`
---
-
-TRUNCATE TABLE `alimentation`;
 --
 -- Contenu de la table `alimentation`
 --
@@ -57,17 +51,11 @@ INSERT INTO `alimentation` (`alimentationID`, `nomRepas`, `calorieIngere`, `date
 -- Structure de la table `categorienourriture`
 --
 
-DROP TABLE IF EXISTS `categorienourriture`;
 CREATE TABLE IF NOT EXISTS `categorienourriture` (
 `categorieID` int(11) NOT NULL,
   `nom` varchar(45) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
---
--- Vider la table avant d'insérer `categorienourriture`
---
-
-TRUNCATE TABLE `categorienourriture`;
 --
 -- Contenu de la table `categorienourriture`
 --
@@ -87,7 +75,6 @@ INSERT INTO `categorienourriture` (`categorieID`, `nom`) VALUES
 -- Structure de la table `conseil`
 --
 
-DROP TABLE IF EXISTS `conseil`;
 CREATE TABLE IF NOT EXISTS `conseil` (
 `conseilID` int(11) NOT NULL,
   `texte` text NOT NULL,
@@ -97,29 +84,18 @@ CREATE TABLE IF NOT EXISTS `conseil` (
   `entraineurID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `conseil`
---
-
-TRUNCATE TABLE `conseil`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `entrainement`
 --
 
-DROP TABLE IF EXISTS `entrainement`;
 CREATE TABLE IF NOT EXISTS `entrainement` (
 `entrainementID` int(11) NOT NULL,
   `nom` varchar(45) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Vider la table avant d'insérer `entrainement`
---
-
-TRUNCATE TABLE `entrainement`;
 --
 -- Contenu de la table `entrainement`
 --
@@ -134,7 +110,6 @@ INSERT INTO `entrainement` (`entrainementID`, `nom`, `type`) VALUES
 -- Structure de la table `message`
 --
 
-DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
 `messageID` int(11) NOT NULL,
   `titre` varchar(45) NOT NULL,
@@ -146,11 +121,6 @@ CREATE TABLE IF NOT EXISTS `message` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Vider la table avant d'insérer `message`
---
-
-TRUNCATE TABLE `message`;
---
 -- Contenu de la table `message`
 --
 
@@ -160,10 +130,32 @@ INSERT INTO `message` (`messageID`, `titre`, `message`, `date`, `estLu`, `expedi
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `objectif`
+--
+
+CREATE TABLE IF NOT EXISTS `objectif` (
+`objectifID` int(11) NOT NULL,
+  `semaine` date NOT NULL,
+  `nbExercice` int(11) DEFAULT NULL,
+  `nbCaloriePerdue` int(11) DEFAULT NULL,
+  `maxBattement` int(11) DEFAULT NULL,
+  `calorieIngereesParJour` int(11) DEFAULT NULL,
+  `clientID` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `objectif`
+--
+
+INSERT INTO `objectif` (`objectifID`, `semaine`, `nbExercice`, `nbCaloriePerdue`, `maxBattement`, `calorieIngereesParJour`, `clientID`) VALUES
+(2, '2014-12-22', 4, 1750, 150, NULL, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `resultat`
 --
 
-DROP TABLE IF EXISTS `resultat`;
 CREATE TABLE IF NOT EXISTS `resultat` (
 `resultatID` int(11) NOT NULL,
   `FQMax` int(11) NOT NULL,
@@ -174,11 +166,6 @@ CREATE TABLE IF NOT EXISTS `resultat` (
   `clientID` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Vider la table avant d'insérer `resultat`
---
-
-TRUNCATE TABLE `resultat`;
 --
 -- Contenu de la table `resultat`
 --
@@ -194,7 +181,6 @@ INSERT INTO `resultat` (`resultatID`, `FQMax`, `VO2Max`, `calorieBrulee`, `date`
 -- Structure de la table `utilisateur`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
 `utilisateurID` int(11) NOT NULL,
   `nom` varchar(45) NOT NULL,
@@ -212,11 +198,6 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `entraineurID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Vider la table avant d'insérer `utilisateur`
---
-
-TRUNCATE TABLE `utilisateur`;
 --
 -- Contenu de la table `utilisateur`
 --
@@ -261,6 +242,12 @@ ALTER TABLE `message`
  ADD PRIMARY KEY (`messageID`), ADD KEY `fk_Message_utilisateur1_idx` (`expeditaireID`), ADD KEY `fk_Message_utilisateur2_idx` (`destinataireID`);
 
 --
+-- Index pour la table `objectif`
+--
+ALTER TABLE `objectif`
+ ADD PRIMARY KEY (`objectifID`), ADD KEY `fk_objectif_utilisateur1_idx` (`clientID`);
+
+--
 -- Index pour la table `resultat`
 --
 ALTER TABLE `resultat`
@@ -302,6 +289,11 @@ MODIFY `entrainementID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 ALTER TABLE `message`
 MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT pour la table `objectif`
+--
+ALTER TABLE `objectif`
+MODIFY `objectifID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT pour la table `resultat`
 --
 ALTER TABLE `resultat`
@@ -335,6 +327,12 @@ ADD CONSTRAINT `fk_Conseil_Utilisateur2` FOREIGN KEY (`clientID`) REFERENCES `ut
 ALTER TABLE `message`
 ADD CONSTRAINT `fk_Message_utilisateur1` FOREIGN KEY (`expeditaireID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_Message_utilisateur2` FOREIGN KEY (`destinataireID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `objectif`
+--
+ALTER TABLE `objectif`
+ADD CONSTRAINT `fk_objectif_utilisateur1` FOREIGN KEY (`clientID`) REFERENCES `utilisateur` (`utilisateurID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `resultat`
