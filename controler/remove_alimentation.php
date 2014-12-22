@@ -1,6 +1,6 @@
 <?php
 
-remove_alimentation($_POST['nomRepas'], $_POST['date']);
+remove_alimentation($_GET['alimentationID'], $userInfo['utilisateurID']);
 
 include('view/alimentation.php');
 ?>

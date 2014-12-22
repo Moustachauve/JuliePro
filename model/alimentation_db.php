@@ -35,12 +35,12 @@ function insert_alimentation($nomRepas,  $calorieIngere, $date, $categorieID, $c
 }
 
 
-function remove_alimentation($nomRepas, $date){
+function remove_alimentation($alimentationID, $userID){
     global $db;
 
     $query = "
               DELETE FROM `alimentation`
-              WHERE `nomRepas` = '$nomRepas' and `date` = '$date'
+              WHERE `alimentationID` = '$alimentationID' AND `clientID` = '$userID'
           ";
 
     $db->exec($query);

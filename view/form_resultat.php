@@ -18,7 +18,7 @@
         <strong style="margin-bottom: 15px; display: block;">Veuillez entrer les informations par rapport à l'exercice accompli </strong>
 
 
-            <form action="#">
+            <form action="#" method="post">
 
                 <div class="col-md-6">
 

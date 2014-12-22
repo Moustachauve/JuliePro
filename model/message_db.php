@@ -11,13 +11,5 @@ function get_messages($userID) {
 
     $result = $db->query($query);
 
-
-    $messages = Array();
-
-    while($data = $result->fetch())
-    {
-        $messages[$data['messageID']] = $data;
-    }
-
-    return $messages;
+    return $result;
 }
