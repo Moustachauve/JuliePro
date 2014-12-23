@@ -33,7 +33,7 @@
                     </li>
                 </ul>
 				<ul class="user-menu">
-					<li><a href="?action=view_messageprive"><span class="glyphicon glyphicon-envelope"></span> 1 </a></li>
+					<li><a href="?action=view_messageprive"><span class="glyphicon glyphicon-envelope"></span> <?php echo get_nombre_messages($userInfo['utilisateurID']); ?> </a></li>
 				</ul>
             <?php } ?>
         </div>

@@ -12,7 +12,7 @@
                         <label>Message:</label>
                         <textarea rows="7" class="form-control" style="max-width: 100%" name="message"></textarea>
                     </div>
-                    <button class="btn btn-primary pull-right" type="submit">Envoyer</button>
+                    <button class="btn btn-primary pull-right" type="submit" name="action" value="insert_message">Envoyer</button>
                 </form>
             </div>
         </div>

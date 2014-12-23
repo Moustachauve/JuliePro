@@ -1,4 +1,4 @@
-<?php $messages = get_messages($userInfo['utilisateurID']); ?>
+<?php $messages = get_messages($userInfo['utilisateurID']);?>
 
 <div class="col-md-12">
     <div class="panel panel-default">
@@ -27,10 +27,15 @@
                     echo '>';
                     echo'<td><span class="glyphicon glyphicon-envelope"></span>';
                     echo'<td>'.$messageCourant['auteur'].'</td>';
-                    echo'<td>'.$messageCourant['titre'].'</td>';
-                    echo'<td>'.$messageCourant['message'].'</td>';
+                    echo'<td><a href="?action=lire_message&messageID='.$messageCourant['messageID'].'">'.$messageCourant['titre'].'</a></td>';
+                    echo'<td>'.substr ($messageCourant['message'], 0, 50);
+                    if(strlen ($messageCourant['message']) > 50)
+                        echo ' [...]';
+                    echo '</td>';
                     echo'<td>'.$messageCourant['date'].'</td>';
-                    echo'<td><a href="#" class="glyphicon glyphicon-remove color-red"></td></td>';
+                    echo'<td>';
+                    echo '<a href="?action=remove_message&messageID='.$messageCourant['messageID'].'" class="glyphicon glyphicon-remove color-red"> </a>';
+                    echo '</td>';
                     echo '</tr>';
                 }
                 ?>

@@ -77,6 +77,18 @@ switch($action)
         include('view/form_messageprive.php');
         break;
 
+    case 'insert_message':
+        include('controler/insert_message.php');
+        break;
+
+    case 'remove_message':
+        include('controler/remove_message.php');
+        break;
+
+    case 'lire_message':
+        include('view/lire_message.php');
+        break;
+
 		/* ACCUEUIL */
     default:
         $action = 'accueil';
