@@ -4,6 +4,8 @@ include('../model/database.php');
 
 session_start();
 
+date_default_timezone_set('America/Montreal');
+
 $userID = $_SESSION['userID'];
 
 $caloriesParJour = Array();

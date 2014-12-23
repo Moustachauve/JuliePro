@@ -1,9 +1,3 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header"><?php echo $userInfo['prenom'].' '.$userInfo['nom']; ?></h1>
-    </div>
-</div><!--/.row-->
-
 <script>
     $(function() {
         var today=new Date();
@@ -16,6 +10,20 @@
         });
     });
 </script>
+
+<?php
+
+
+if(isset($_GET['edit']))
+{
+    $edit = true;
+    $alimentation = get_alimentation($userInfo['utilisateurID'], $_GET['edit']);
+}
+else
+{
+    $edit = false;
+}
+?>
 
 <div class="panel panel-default">
     <div class="panel-heading">Alimentation de la journée</div>
@@ -31,7 +39,10 @@
                         $categories = get_all_categorie();
                         foreach($categories as $categorieCourante)
                         {
-                            echo '<option value="'.$categorieCourante['categorieID'].'">'.$categorieCourante['nom'].'</option>';
+                            echo '<option value="'.$categorieCourante['categorieID'].'"';
+                            if($edit && $categorieCourante['categorieID'] == $alimentation['categorieID'])
+                                echo ' selected ';
+                            echo '>'.$categorieCourante['nom'].'</option>';
                         }
                         ?>
                     </select>
@@ -39,18 +50,21 @@
 
                 <div class="form-group">
                     <label>Nom Repas:</label>
-                    <input class="form-control" value="" required name="nomRepas">
+                    <input class="form-control" value="<?php if($edit) echo $alimentation['nomRepas']; ?>" required name="nomRepas">
                 </div>
 
                 <div class="form-group">
                     <label>calorie:</label>
-                    <input class="form-control" value=""  required name="calorieIngere">
+                    <input class="form-control" value="<?php if($edit) echo $alimentation['calorieIngere']; ?>"  required name="calorieIngere">
                 </div>
                 <div class="form-group">
                     <label>date:</label>
-                    <input class="form-control"  id="datepicker" name="date" value="<?php echo date('Y-m-d'); ?>" >
+                    <input class="form-control"  id="datepicker" name="date" value="<?php if($edit) echo $alimentation['date']; else echo date('Y-m-d'); ?>" >
                 </div>
-                <button type="submit" class="btn btn-primary" name="action" value="insert_alimentation">Ajouter</button>
+
+                <?php if($edit) echo '<input type="hidden" name="alimentationID" value="'.$alimentation['alimentationID'].'" >'; ?>
+
+                <button type="submit" class="btn btn-primary pull-right" name="action" value="<?php if($edit) echo 'update_alimentation">Changer'; else echo 'insert_alimentation">Ajouter'; ?></button>
             </form>
         </div>
         <div class="col-md-6">
