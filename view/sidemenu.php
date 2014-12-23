@@ -19,13 +19,7 @@
         <li id="view_profile"><a href="?action=view_profile"><span class="glyphicon glyphicon-user"></span>Profil</a></li>
         <li><a href="?action=view_profile"><span class="glyphicon glyphicon-log-out"></span>Déconnexion</a></li>
 
-        <!-- Pages d'exemples à retirer dans le futur -->
-
-        <li role="presentation" class="divider">Exemples:</li>
-        <li><a href="blank.php"><span class="glyphicon glyphicon-dashboard"></span> Page vide</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login Page</a></li>
-
-    </ul>
+     </ul>
     <div class="attribution">Template par <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a></div>
 </div><!--/.sidebar-->
 
