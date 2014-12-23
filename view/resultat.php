@@ -1,12 +1,6 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Résultat de <?php echo $userInfo['prenom'].' '.$userInfo['nom']; ?></h1>
-    </div>
-</div><!--/.row-->
-
     <?php $resultat = get_all_resultat($userInfo['utilisateurID']); ?>
 
-    <div class="col-md-7">
+    <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">Tableau des résultats</div>
             <div class="panel-body">
