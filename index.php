@@ -11,6 +11,7 @@ include ("model/user_db.php");
 include ("model/alimentation_db.php");
 include ("model/resultat_db.php");
 include ("model/message_db.php");
+include ('model/objectif_db.php');
 
 $userInfo = get_user($_SESSION['userID']);
 
