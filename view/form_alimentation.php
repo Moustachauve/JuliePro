@@ -12,8 +12,6 @@
 </script>
 
 <?php
-
-
 if(isset($_GET['edit']))
 {
     $edit = true;

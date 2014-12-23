@@ -33,19 +33,15 @@ switch($action)
     case 'view_alimentation':
         include('view/alimentation.php');
         break;
-
     case 'form_alimentation':
         include('view/form_alimentation.php');
         break;
-
     case 'remove_alimentation':
         include('controler/remove_alimentation.php');
         break;
-
     case 'insert_alimentation':
         include('controler/insert_alimentation.php');
         break;
-
     case 'update_alimentation':
         include('controler/update_alimentation.php');
         break;
@@ -63,11 +59,14 @@ switch($action)
     case 'remove_resultat':
         include('controler/remove_resultat.php');
         break;
+    case 'update_resultat':
+        include('controler/update_resultat.php');
+        break;
+
     /* PROFIL */
     case 'view_profile':
         include('view/profile.php');
         break;
-
     case 'update_profile':
         include('controler/update_profile.php');
         break;
@@ -77,19 +76,15 @@ switch($action)
     case 'view_messageprive':
         include('view/messageprive.php');
         break;
-
     case 'form_messageprive':
         include('view/form_messageprive.php');
         break;
-
     case 'insert_message':
         include('controler/insert_message.php');
         break;
-
     case 'remove_message':
         include('controler/remove_message.php');
         break;
-
     case 'lire_message':
         include('view/lire_message.php');
         break;

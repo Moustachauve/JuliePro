@@ -1,6 +1,17 @@
-    <?php $resultat = get_all_resultat($userInfo['utilisateurID']); ?>
+<div class="col-md-12">
 
-    <div class="col-md-12">
+    <?php
+    $resultat = get_all_resultat($userInfo['utilisateurID']);
+
+    if(isset($succes))
+    {
+        ?>
+        <div class="alert bg-success" role="alert">
+            <span class="glyphicon glyphicon-check"></span> Vos modifications ont été enregistrées avec succès
+        </div>
+    <?php
+    }
+    ?>
         <div class="panel panel-default">
             <div class="panel-heading">Tableau des résultats</div>
             <div class="panel-body">
@@ -30,7 +41,7 @@
                             echo'<td>'.$resultatCourant['type'].'</td>';
                             echo'<td>'.$resultatCourant['date'].'</td>';
                         echo '<td>';
-                            echo '<a href="#" class="glyphicon glyphicon-pencil "> </a> ';
+                            echo '<a href="?action=form_resultat&edit='.$resultatCourant['resultatID'].'" class="glyphicon glyphicon-pencil "> </a> ';
                             echo '<a href="?action=remove_resultat&resultatID='.$resultatCourant['resultatID'].'" class="glyphicon glyphicon-remove color-red"> </a>';
                         echo '</td>';
                         echo '</tr>';

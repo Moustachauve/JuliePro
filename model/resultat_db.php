@@ -10,14 +10,21 @@ function get_all_resultat($userID)
         WHERE R.clientID = '.$userID;
     $result = $db->query($query);
 
-    $resultat = Array();
+    return $result;
+}
 
-    while($data = $result->fetch())
-    {
-        $resultat[$data['resultatID']] = $data;
-    }
+function get_resultat($userID, $resultatID)
+{
+    global $db;
+    $query = 'SELECT *
+              FROM `resultat` R
+              INNER JOIN `entrainement` E
+              ON R.`entrainementID` = E.`entrainementID`
+              WHERE R.clientID = '.$userID.' AND R.resultatID = '.$resultatID;
 
-    return $resultat;
+    $result = $db->query($query);
+
+    return $result->fetch();
 }
 
 function get_all_entrainement(){
@@ -50,6 +57,23 @@ function remove_resultat($resultatID, $userID){
     $query = "
               DELETE FROM `resultat`
               WHERE `resultatID` = '$resultatID' AND `clientID` = '$userID'
+          ";
+
+    $db->exec($query);
+}
+
+function update_resultat($clientID, $resultatID, $FQMax, $VO2Max, $calorieBrulee, $date, $entrainementID)
+{
+    global $db;
+
+    $query = "
+              UPDATE `resultat`
+              SET `FQMax` = '$FQMax',
+              `VO2Max` = '$VO2Max',
+              `calorieBrulee` = '$calorieBrulee',
+              `date` = '$date',
+              `entrainementID` = '$entrainementID'
+              WHERE `resultatID` = $resultatID AND `clientID` = $clientID;
           ";
 
     $db->exec($query);
