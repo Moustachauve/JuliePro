@@ -7,10 +7,10 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>bouffe</th>
-                        <th>calories</th>
-                        <th>catégorie</th>
-                        <th>date</th>
+                        <th>Nom du repas</th>
+                        <th>Calories</th>
+                        <th>Catégorie</th>
+                        <th>Date</th>
                         <th>Action</th>
                     </tr>
                     </thead>
