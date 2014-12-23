@@ -7,7 +7,8 @@ function get_all_resultat($userID)
         FROM `resultat` R
         INNER JOIN `entrainement` E
         ON R.`entrainementID` = E.`entrainementID`
-        WHERE R.clientID = '.$userID;
+        WHERE R.clientID = '.$userID.'
+        ORDER BY `date` DESC';
     $result = $db->query($query);
 
     return $result;

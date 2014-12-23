@@ -7,7 +7,8 @@ function get_all_alimentation($userID){
                     FROM `alimentation` a
                     INNER JOIN categorienourriture c
                     on c.categorieID = a.categorieID
-                    WHERE a.clientID = '.$userID;
+                    WHERE a.clientID = '.$userID.'
+                    ORDER BY `date` DESC';
 
 
     $result = $db->query($query);
