@@ -62,8 +62,10 @@ $calorieIngere = get_stat_calorie_ingere($userInfo['utilisateurID']);
                 <div class="easypiechart">
                     <span class="percent">
                         <?php
-                            if($entrainementsSemaine[2] == 0) echo '- ';
-                            else echo number_format($entrainementsSemaine[2],1);
+                            if($entrainementsSemaine[2] == 0)
+                                echo '- ';
+                            else
+                                echo number_format($entrainementsSemaine[2],1);
                             echo '/'.$objectifs['maxBattement'];
                         ?>
                     </span>
@@ -82,7 +84,13 @@ $calorieIngere = get_stat_calorie_ingere($userInfo['utilisateurID']);
                         if(empty($objectifs['calorieIngereesParJour']))
                             echo 'Pas d\'objectif';
                         else
-                            echo round($calorieIngere[0],2).'/'.$objectifs['calorieIngereesParJour'];
+                        {
+                            if($calorieIngere[0] == 0)
+                                echo '- ';
+                            else
+                                echo round($calorieIngere[0],2);
+                            echo '/'.$objectifs['calorieIngereesParJour'];
+                        }
                         ?>
                     </span>
                 </div>
