@@ -3,6 +3,7 @@
     <script src="js/template_js/easypiechart.js"></script>
     <script src="js/template_js/easypiechart-data.js"></script>
     <script src="js/template_js/bootstrap-datepicker.js"></script>
+    <script src="js/template_js/locales/bootstrap-datepicker.fr.js"></script>
     <script src="js/template_js/jquery.formatter.min.js"></script>
 
     <script src="js/profile_validate.js"></script>

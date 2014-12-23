@@ -6,8 +6,14 @@
 
 <script>
     $(function() {
-        $("#datepicker").datepicker({ format: "yyyy-mm-dd" });
+        var today=new Date();
 
+        $("#datepicker").datepicker({
+            language: "fr",
+            endDate: today,
+            autoclose: true,
+            todayHighlight: true
+        });
     });
 </script>
 

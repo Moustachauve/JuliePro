@@ -19,7 +19,9 @@ $query = '
 
 $result = $db->query($query);
 
-for($i = 0; $i < 7; $i++)
+$currentDay = date("N", time()) - 1;
+
+for($i = 0; $i < $currentDay; $i++)
 {
     $caloriesParJour[$i] = 0;
 }
